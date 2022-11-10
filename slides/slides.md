@@ -9,9 +9,26 @@ Zajęcia Allegro na Wydziale Matematyki i Informatyki UMK 2022/2023.
 
 ---
 
-# Wybierz zajęcia
+# Bazy danych NoSQL - MongoDB
 
-<Link to="3">Zajęcia 1 (Operowanie bezpośrednio na bazie)</Link>
+Zadania i wiedza
+na [github.com/jakubpradzynski/mongodb-spring-kurs-dla-poczatkujacych/wiki](https://github.com/jakubpradzynski/mongodb-spring-kurs-dla-poczatkujacych/wiki)
+
+<br>
+
+### Podział zajęć
+
+<br>
+
+- <Link to="3">Zajęcia 1 (Operowanie bezpośrednio na bazie)</Link>
+- <Link to="3">Zajęcia 2 (Projekt ze [Spring Data MongoDB](https://spring.io/projects/spring-data-mongodb))</Link>
+- <Link to="3">Zajęcia 3 (Administrowanie bazą)</Link>
+
+<br><br>
+
+### Forma zajęć
+
+zadania > teoria
 
 ---
 src: ./pages/lesson-1.md

@@ -5,7 +5,100 @@ Na tych zajęciach skupimy się na operowaniu bezpośrednio na bazie MongoDB.
 
 Nauczysz się wykonywać zapytania CRUD, wyszukiwać za pomocą bardziej skomplikowanych warunków, używać agregacji oraz tworzyć indeksy.
 
-<Toc columns="3" minDepth="2" maxDepth="3" />
+---
+
+# NoSQL
+
+1. Czym są bazy NoSQL?
+2. Rodzaje baz NoSQL.
+3. NoSQL vs SQL.
+
+---
+layout: two-cols
+---
+
+# MongoDB
+
+1. Historia.
+2. Cechy:
+   - elastyczność
+   - wysoka dostępność
+   - skalowalność
+   - szybkość
+3. Jak przechowywane są dane?
+   - JSON / BSON
+   - przykład dokumentu
+4. Pole `_id`.
+
+::right::
+
+<br><br>
+```mermaid
+graph TD;
+    Database-->Collection-->Document;
+```
+
+---
+
+# Replica Set
+
+1. Czym jest?
+2. Elekcja primary.
+
+```mermaid
+flowchart TB
+    User --Reads--> Primary
+    User --Writes--> Primary
+    subgraph RS [Replica Set]
+    Primary --Replication--> Secondary1
+    Primary --Replication--> Secondary2
+    end
+```
+
+---
+
+# MongoDB Atlas
+
+1. Utworzenie konta [cloud.mongodb.com](https://cloud.mongodb.com/)
+2. Utworzenie bazy
+3. Dodanie użytkownika
+4. Dodanie adresu IP
+5. Załadowanie sample data
+
+---
+
+# Jak podłączyć się do MongoDB?
+
+<br>
+
+Instalacja klient: [mongosh](https://www.mongodb.com/try/download/shell).
+
+Connection String URI:
+```bash
+mongodb://user:password@localhost:27017/db?authSource=admin
+```
+
+Połaczenie:
+```bash
+mongosh {uri}
+```
+
+---
+
+# Operowanie na bazie
+
+1. `show dbs`
+2. `show collections`
+3. `use my_db`
+
+---
+
+# Operacje CRUD
+
+1. Create - `db.collection.insert({name: "Jakub"})`
+2. Read - `db.collection.find({name: "Jakub"})`
+3. Update - `db.collection.update({name: "Jakub"}, {name: "Kuba"})`
+4. Delete - `db.collection.delete({name: "Kuba")`
 
 ---
 layout: center
@@ -199,6 +292,29 @@ db.inflacja.drop()
 </details>
 
 ---
+
+# Wyszukiwanie
+
+<br>
+
+1. Operatory logiczne, obiekty zagnieżdżone, tablice.
+```
+db.collection.find({$or: ["a.b": "c", "d": ["c"]]})`
+```
+<br>
+
+2. Sortowanie i limitowanie wyników
+```
+db.collection.find({}).sort({a: 1}).limit(10)
+```
+<br>
+
+3. Zliczanie
+```
+db.collection.count({})
+```
+
+---
 layout: center
 ---
 
@@ -305,6 +421,19 @@ db.movies.find(
 </details>
 
 ---
+
+# Agregacje
+
+1. Czym są agregacje (pipeline, stage)?
+2. Przykład wyszukiwania
+
+<br>
+
+```
+db.collection.aggregate([ { $match : { field : "value" } } ])
+```
+
+---
 layout: center
 ---
 
@@ -381,6 +510,21 @@ db.movies.aggregate([
 ])
 ```
 </details>
+
+---
+
+# Indeksy
+
+1. Czym jest indeks?
+2. Po co go tworzymy.
+3. Rodzaje indeksów.
+4. Przykład tworzenia.
+
+<br>
+
+```
+db.collection.createIndex({field: 1}, {background: true})
+```
 
 ---
 layout: center
