@@ -125,6 +125,55 @@ class BooksRepositoryTests extends IntegrationTestsBase {
         assertEquals(count, 5);
     }
 
+    @Test
+    void shouldFindAllBooksWithScoresBiggerThenGivenAndSortedAscending() {
+        // GIVEN
+        var goodreadsScoreThreshold = 4.25;
+        var lubimyczytacScoreThreshold = 7.25;
+
+        // WHEN
+        var foundBooks = booksRepository.findByScoresBiggerThen(goodreadsScoreThreshold, lubimyczytacScoreThreshold);
+
+        // THEN
+        assertEquals(
+                List.of(najbogatszyCzlowiekWBabilonie, mistrzCzystegoKodu, czystyKod),
+                foundBooks
+        );
+    }
+
+    @Test
+    void shouldGroupBooksByPublisherAndSortedByName() {
+        // GIVEN
+
+        // WHEN
+        var groupedBooks = booksRepository.findAllGroupedByPublisher();
+
+        // THEN
+        assertEquals(groupedBooks.get(0).publisher(), "Helion");
+        assertEquals(groupedBooks.get(0).books(), Set.of(czystyKod, mistrzCzystegoKodu, wzorceProjektowe));
+        assertEquals(groupedBooks.get(0).count(), 3);
+        assertEquals(groupedBooks.get(1).publisher(), "Milion Kroków");
+        assertEquals(groupedBooks.get(1).books(), Set.of(zbijFortuneNaDywidendach, sladamiWarrenaBuffeta, malaKsiazkaZdroworozsadkowegoInwestowania));
+        assertEquals(groupedBooks.get(1).count(), 3);
+        assertEquals(groupedBooks.get(2).publisher(), "Studio EMKA");
+        assertEquals(groupedBooks.get(2).books(), Set.of(inteligentnyInwestor, najbogatszyCzlowiekWBabilonie));
+        assertEquals(groupedBooks.get(2).count(), 2);
+    }
+
+    @Test
+    void shouldFindBooksWithKsiążkaWordInDescription() {
+        // GIVEN
+
+        // WHEN
+        var foundBooks = booksRepository.findByTextInDescription("Książka");
+
+        // THEN
+        assertEquals(
+                List.of(malaKsiazkaZdroworozsadkowegoInwestowania, sladamiWarrenaBuffeta, zbijFortuneNaDywidendach),
+                foundBooks
+        );
+    }
+
     @BeforeEach
     public void beforeEach() {
         booksRepository.deleteAll();

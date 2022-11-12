@@ -2,7 +2,9 @@ package pl.jakubpradzynski.mongodb_basics.books;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Set;
 
@@ -12,14 +14,17 @@ enum Genre {
     INVESTMENT, PROGRAMMING
 }
 
-record Score(Double goodreads, Double lubimyczytac) {
+record Score(
+        Double goodreads,
+        Double lubimyczytac
+) {
 }
 
 @Document(collection = "books")
 public record Book(
         @Id ObjectId id,
         String title,
-        String description,
+        @TextIndexed String description,
         String publisher,
         int publishYear,
         int numberOfPages,
@@ -131,4 +136,11 @@ class BookBuilder {
     Book build() {
         return new Book(id, title, description, publisher, publishYear, numberOfPages, isbnNumber, genres, score, authorIds);
     }
+}
+
+record BooksGroupedByPublisher(
+        @Field("_id") String publisher,
+        Set<Book> books,
+        int count
+) {
 }

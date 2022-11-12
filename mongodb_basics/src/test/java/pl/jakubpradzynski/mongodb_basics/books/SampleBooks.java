@@ -49,7 +49,7 @@ public class SampleBooks {
             .generateId()
             .title("Najbogatszy człowiek w Babilonie")
             .description("\"Najbogatszy człowiek w Babilonie\" nie dostarcza szybkich rozwiązań, ale znakomicie radzi, jak spłacać długi, zapewnić sobie stały dochód i w rezultacie budować majątek.")
-            .publisher("StudioEMKA")
+            .publisher("Studio EMKA")
             .publishYear(2017)
             .numberOfPages(176)
             .isbnNumber("9788365068293")
