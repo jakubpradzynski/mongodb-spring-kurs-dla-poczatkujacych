@@ -30,16 +30,16 @@ class AuthorsRepositoryTests extends IntegrationTestsBase {
         assertEquals(author, authorsRepository.findById(authorId).get(), "Authors are not the same.");
 
         // GIVEN
-        var editedBook = Author.builder()
+        var editedAuthor = Author.builder()
                 .copyFrom(author)
                 .name("New name")
                 .build();
 
         // WHEN
-        authorsRepository.save(editedBook);
+        authorsRepository.save(editedAuthor);
 
         // THEN
-        assertEquals(editedBook, authorsRepository.findById(authorId).get(), "Author has not been changed.");
+        assertEquals(editedAuthor, authorsRepository.findById(authorId).get(), "Author has not been changed.");
 
         // WHEN
         authorsRepository.deleteById(authorId);
