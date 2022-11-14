@@ -177,13 +177,6 @@ class BooksRepositoryTests extends IntegrationTestsBase {
     @BeforeEach
     public void beforeEach() {
         booksRepository.deleteAll();
-        booksRepository.save(zbijFortuneNaDywidendach);
-        booksRepository.save(inteligentnyInwestor);
-        booksRepository.save(malaKsiazkaZdroworozsadkowegoInwestowania);
-        booksRepository.save(sladamiWarrenaBuffeta);
-        booksRepository.save(najbogatszyCzlowiekWBabilonie);
-        booksRepository.save(czystyKod);
-        booksRepository.save(mistrzCzystegoKodu);
-        booksRepository.save(wzorceProjektowe);
+        SampleBooks.saveAllBooks(booksRepository);
     }
 }

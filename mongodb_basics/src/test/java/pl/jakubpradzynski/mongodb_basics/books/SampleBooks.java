@@ -2,6 +2,7 @@ package pl.jakubpradzynski.mongodb_basics.books;
 
 import java.util.Set;
 
+import static pl.jakubpradzynski.mongodb_basics.authors.SampleAuthors.*;
 import static pl.jakubpradzynski.mongodb_basics.books.Genre.INVESTMENT;
 import static pl.jakubpradzynski.mongodb_basics.books.Genre.PROGRAMMING;
 
@@ -16,7 +17,7 @@ public class SampleBooks {
             .isbnNumber("9788395529276")
             .genres(Set.of(INVESTMENT))
             .score(new Score(4.16, 8.3))
-            .authorIds(Set.of()) // John C. Bogle
+            .authorIds(Set.of(johnBogle.id()))
             .build();
 
     public static Book sladamiWarrenaBuffeta = Book.builder()
@@ -29,7 +30,7 @@ public class SampleBooks {
             .isbnNumber("97883955292207")
             .genres(Set.of(INVESTMENT))
             .score(new Score(4.21, 6.9))
-            .authorIds(Set.of()) // Przemysław Gerschmann, Tomasz Jaroszek
+            .authorIds(Set.of(przemyslawGerschmann.id(), tomaszJaroszek.id()))
             .build();
 
     public static Book zbijFortuneNaDywidendach = Book.builder()
@@ -42,7 +43,7 @@ public class SampleBooks {
             .isbnNumber("9788395529238")
             .genres(Set.of(INVESTMENT))
             .score(new Score(3.89, 7.3))
-            .authorIds(Set.of()) // Marc Lichtenfeld
+            .authorIds(Set.of(marcLichtenfeld.id()))
             .build();
 
     public static Book najbogatszyCzlowiekWBabilonie = Book.builder()
@@ -55,7 +56,7 @@ public class SampleBooks {
             .isbnNumber("9788365068293")
             .genres(Set.of(INVESTMENT))
             .score(new Score(4.26, 7.4))
-            .authorIds(Set.of()) // George S. Clason
+            .authorIds(Set.of(georgeClason.id()))
             .build();
 
     public static Book inteligentnyInwestor = Book.builder()
@@ -68,7 +69,7 @@ public class SampleBooks {
             .isbnNumber("9788388931895")
             .genres(Set.of(INVESTMENT))
             .score(new Score(4.25, 7.7))
-            .authorIds(Set.of()) // Benjamin Graham
+            .authorIds(Set.of(benjaminGraham.id()))
             .build();
 
     public static Book czystyKod = Book.builder()
@@ -81,7 +82,7 @@ public class SampleBooks {
             .isbnNumber("9788328302341")
             .genres(Set.of(PROGRAMMING))
             .score(new Score(4.39, 8.0))
-            .authorIds(Set.of()) // Robert C. Martin
+            .authorIds(Set.of(robertMartin.id()))
             .build();
 
     public static Book wzorceProjektowe = Book.builder()
@@ -94,7 +95,7 @@ public class SampleBooks {
             .isbnNumber("9788328386099")
             .genres(Set.of(PROGRAMMING))
             .score(new Score(4.19, 7.3))
-            .authorIds(Set.of()) // Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides
+            .authorIds(Set.of(erichGamma.id(), richardHelm.id(), ralphJohnson.id(), johnVlissides.id()))
             .build();
 
     public static Book mistrzCzystegoKodu = Book.builder()
@@ -107,6 +108,17 @@ public class SampleBooks {
             .isbnNumber("9788328382961")
             .genres(Set.of(PROGRAMMING))
             .score(new Score(4.28, 7.4))
-            .authorIds(Set.of()) // Robert C. Martin
+            .authorIds(Set.of(robertMartin.id()))
             .build();
+
+    public static void saveAllBooks(BooksRepository booksRepository) {
+        booksRepository.save(zbijFortuneNaDywidendach);
+        booksRepository.save(inteligentnyInwestor);
+        booksRepository.save(malaKsiazkaZdroworozsadkowegoInwestowania);
+        booksRepository.save(sladamiWarrenaBuffeta);
+        booksRepository.save(najbogatszyCzlowiekWBabilonie);
+        booksRepository.save(czystyKod);
+        booksRepository.save(mistrzCzystegoKodu);
+        booksRepository.save(wzorceProjektowe);
+    }
 }
