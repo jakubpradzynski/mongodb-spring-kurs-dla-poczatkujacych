@@ -1,6 +1,6 @@
 package pl.jakubpradzynski.mongodb_basics.authors;
 
-import java.sql.Date;
+import org.assertj.core.util.DateUtil;
 
 public class SampleAuthors {
     public static Author johnBogle = Author.builder()
@@ -8,7 +8,7 @@ public class SampleAuthors {
             .name("John C.")
             .surname("Bogle")
             .nationality("American")
-            .dateOfBirth(Date.valueOf("1952-12-05"))
+            .dateOfBirth(DateUtil.parse("1952-12-05"))
             .build();
 
     public static Author przemyslawGerschmann = Author.builder()
@@ -16,7 +16,7 @@ public class SampleAuthors {
             .name("Przemysław")
             .surname("Gerschmann")
             .nationality("Polish")
-            .dateOfBirth(Date.valueOf("1984-02-02")) // random date
+            .dateOfBirth(DateUtil.parse("1984-02-02")) // random date
             .build();
 
     public static Author tomaszJaroszek = Author.builder()
@@ -24,7 +24,7 @@ public class SampleAuthors {
             .name("Tomasz")
             .surname("Jaroszek")
             .nationality("Polish")
-            .dateOfBirth(Date.valueOf("1985-01-01")) // random date
+            .dateOfBirth(DateUtil.parse("1985-01-01")) // random date
             .build();
 
     public static Author marcLichtenfeld = Author.builder()
@@ -32,7 +32,7 @@ public class SampleAuthors {
             .name("Marc")
             .surname("Lichtenfeld")
             .nationality("American")
-            .dateOfBirth(Date.valueOf("1973-05-12")) // random date
+            .dateOfBirth(DateUtil.parse("1973-05-12")) // random date
             .build();
 
     public static Author georgeClason = Author.builder()
@@ -40,8 +40,8 @@ public class SampleAuthors {
             .name("George C.")
             .surname("Clason")
             .nationality("American")
-            .dateOfBirth(Date.valueOf("1874-11-07"))
-            .dateOfDeath(Date.valueOf("1957-04-05"))
+            .dateOfBirth(DateUtil.parse("1874-11-07"))
+            .dateOfDeath(DateUtil.parse("1957-04-05"))
             .build();
 
     public static Author benjaminGraham = Author.builder()
@@ -49,8 +49,8 @@ public class SampleAuthors {
             .name("Benjamin")
             .surname("Graham")
             .nationality("American")
-            .dateOfBirth(Date.valueOf("1894-05-09"))
-            .dateOfDeath(Date.valueOf("1976-09-21"))
+            .dateOfBirth(DateUtil.parse("1894-05-09"))
+            .dateOfDeath(DateUtil.parse("1976-09-21"))
             .build();
 
     public static Author robertMartin = Author.builder()
@@ -58,7 +58,7 @@ public class SampleAuthors {
             .name("Robert C.")
             .surname("Martin")
             .nationality("American")
-            .dateOfBirth(Date.valueOf("1952-12-05"))
+            .dateOfBirth(DateUtil.parse("1952-12-05"))
             .build();
 
     public static Author erichGamma = Author.builder()
@@ -66,7 +66,7 @@ public class SampleAuthors {
             .name("Erich")
             .surname("Gamma")
             .nationality("American")
-            .dateOfBirth(Date.valueOf("1961-03-13"))
+            .dateOfBirth(DateUtil.parse("1961-03-13"))
             .build();
 
     public static Author richardHelm = Author.builder()
@@ -74,7 +74,7 @@ public class SampleAuthors {
             .name("Richard")
             .surname("Helm")
             .nationality("American")
-            .dateOfBirth(Date.valueOf("1960-10-03")) // random date
+            .dateOfBirth(DateUtil.parse("1960-10-03")) // random date
             .build();
 
     public static Author ralphJohnson = Author.builder()
@@ -82,7 +82,7 @@ public class SampleAuthors {
             .name("Ralph")
             .surname("Johnson")
             .nationality("American")
-            .dateOfBirth(Date.valueOf("1955-10-07"))
+            .dateOfBirth(DateUtil.parse("1955-10-07"))
             .build();
 
     public static Author johnVlissides = Author.builder()
@@ -90,8 +90,8 @@ public class SampleAuthors {
             .name("John")
             .surname("Vlissides")
             .nationality("American")
-            .dateOfBirth(Date.valueOf("1961-08-02"))
-            .dateOfDeath(Date.valueOf("2005-11-24"))
+            .dateOfBirth(DateUtil.parse("1961-08-02"))
+            .dateOfDeath(DateUtil.parse("2005-11-24"))
             .build();
 
     public static void saveAllAuthors(AuthorsRepository authorsRepository) {

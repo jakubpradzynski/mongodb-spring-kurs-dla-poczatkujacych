@@ -18,6 +18,10 @@ public record Author(
     public static AuthorBuilder builder() {
         return new AuthorBuilder();
     }
+
+    public AuthorWithAge withAge(int age) {
+        return new AuthorWithAge(name, surname, age);
+    }
 }
 
 class AuthorBuilder {
@@ -86,4 +90,8 @@ class AuthorBuilder {
     Author build() {
         return new Author(id, name, surname, nationality, dateOfBirth, dateOfDeath);
     }
+}
+
+
+record AuthorWithAge(String name, String surname, int age) {
 }
