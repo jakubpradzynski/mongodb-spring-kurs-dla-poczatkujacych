@@ -47,6 +47,10 @@ class BooksRepositoryImpl implements BooksRepository {
 ```
 </details>
 
+<br>
+
+##### Pamiętaj o zaimplementowaniu również metody `deleteAll`, która jest używana w metodzie `beforeEach` przygotowującej dane do testów.
+
 ---
 layout: center
 ---
@@ -276,6 +280,10 @@ class AuthorsRepositoryImpl implements AuthorsRepository {
 }
 ```
 </details>
+
+<br>
+
+##### Pamiętaj o zaimplementowaniu również metody `deleteAll`, która jest używana w metodzie `beforeEach` przygotowującej dane do testów.
 
 ---
 layout: center
