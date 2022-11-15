@@ -142,7 +142,7 @@ class BooksRepositoryTests extends IntegrationTestsBase {
     }
 
     @Test
-    void shouldGroupBooksByPublisherAndSortedByName() {
+    void shouldGroupBooksByPublisherAndSortedByNameAscending() {
         // GIVEN
 
         // WHEN
