@@ -6,6 +6,8 @@ Na tych zajęciach skupimy się na operowaniu na bazie MongoDB z projektu: Java 
 Twoim zadaniem będzie zaimplementować metody w repozytoriach tak, by wszystkie testy przeszły.
 
 ---
+layout: center
+---
 
 # BooksRepository
 
@@ -240,6 +242,8 @@ class BooksRepositoryImpl implements BooksRepository {
 </details>
 
 ---
+layout: center
+---
 
 # AuthorsRepository
 
@@ -353,6 +357,8 @@ class AuthorsRepositoryImpl implements AuthorsRepository {
 ```
 </details>
 
+---
+layout: center
 ---
 
 # AuthorWithBooksRepository
