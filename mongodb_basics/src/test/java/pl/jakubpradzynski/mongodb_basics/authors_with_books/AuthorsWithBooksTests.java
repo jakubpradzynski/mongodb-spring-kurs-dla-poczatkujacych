@@ -53,7 +53,6 @@ class AuthorsWithBooksTests extends IntegrationTestsBase {
     }
 
 
-
     @BeforeEach
     public void beforeEach() {
         authorsRepository.deleteAll();

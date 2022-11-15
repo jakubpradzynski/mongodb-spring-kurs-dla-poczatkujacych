@@ -5,7 +5,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.MongoDBContainer;
-import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
 
@@ -13,7 +12,7 @@ import org.testcontainers.utility.DockerImageName;
 @Testcontainers
 public class IntegrationTestsBase {
 
-//    @Container
+    //    @Container
     public static MongoDBContainer container = new MongoDBContainer(DockerImageName.parse("mongo:5.0.13"));
 
     @BeforeAll
