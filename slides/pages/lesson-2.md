@@ -13,7 +13,7 @@ Twoim zadaniem będzie zaimplementować metody w repozytoriach tak, by wszystkie
 layout: center
 ---
 
-### Test `shouldCreateReadUpdateDeleteBook`
+### Test 1 - `shouldCreateReadUpdateDeleteBook`
 
 <br>
 
@@ -55,7 +55,7 @@ class BooksRepositoryImpl implements BooksRepository {
 layout: center
 ---
 
-### Test `shouldEditBookScore`
+### Test 2 - `shouldEditBookScore`
 
 <br>
 
@@ -82,7 +82,7 @@ class BooksRepositoryImpl implements BooksRepository {
 layout: center
 ---
 
-### Test `shouldAddNewAuthor`
+### Test 3 - `shouldAddNewAuthor`
 
 <br>
 
@@ -109,7 +109,7 @@ class BooksRepositoryImpl implements BooksRepository {
 layout: center
 ---
 
-### Test `shouldFindAllProgrammingBooks`
+### Test 4 - `shouldFindAllProgrammingBooks`
 
 <br>
 
@@ -135,7 +135,7 @@ class BooksRepositoryImpl implements BooksRepository {
 layout: center
 ---
 
-### Test `shouldCountAllInvestingBooks`
+### Test 5 - `shouldCountAllInvestingBooks`
 
 <br>
 
@@ -158,7 +158,7 @@ class BooksRepositoryImpl implements BooksRepository {
 layout: center
 ---
 
-### Test `shouldFindAllBooksWithScoresBiggerThenGivenAndSortedAscending`
+### Test 6 - `shouldFindAllBooksWithScoresBiggerThenGivenAndSortedAscending`
 
 <br>
 
@@ -187,7 +187,7 @@ class BooksRepositoryImpl implements BooksRepository {
 layout: center
 ---
 
-### Test `shouldGroupBooksByPublisherAndSortedByNameAscending`
+### Test 7 - `shouldGroupBooksByPublisherAndSortedByNameAscending`
 
 <br>
 
@@ -217,7 +217,7 @@ class BooksRepositoryImpl implements BooksRepository {
 layout: center
 ---
 
-### Test `shouldFindBooksWithKsiążkaWordInDescription`
+### Test 8 - `shouldFindBooksWithKsiążkaWordInDescription`
 
 <br>
 
@@ -247,7 +247,7 @@ class BooksRepositoryImpl implements BooksRepository {
 layout: center
 ---
 
-### Test `shouldCreateReadUpdateDeleteAuthor`
+### Test 9 - `shouldCreateReadUpdateDeleteAuthor`
 
 <br>
 
@@ -289,7 +289,7 @@ class AuthorsRepositoryImpl implements AuthorsRepository {
 layout: center
 ---
 
-### Test `shouldFindPolishOrNotLivingAuthorsSortedByDateOfBirthAscending`
+### Test 10 - `shouldFindPolishOrNotLivingAuthorsSortedByDateOfBirthAscending`
 
 <br>
 
@@ -321,7 +321,7 @@ class AuthorsRepositoryImpl implements AuthorsRepository {
 layout: center
 ---
 
-### Test `shouldCalculateAuthorAgesSortedByAgeDescending`
+### Test 11 - `shouldCalculateAuthorAgesSortedByAgeDescending`
 
 <br>
 
@@ -361,7 +361,7 @@ class AuthorsRepositoryImpl implements AuthorsRepository {
 layout: center
 ---
 
-### Test `shouldPrepareViewModelForAuthorWithBooks` cz. 1
+### Test 12 - `shouldPrepareViewModelForAuthorWithBooks` cz. 1
 
 <br>
 
@@ -398,7 +398,7 @@ public class AuthorsWithBooksRepository {
 layout: center
 ---
 
-### Test `shouldPrepareViewModelForAuthorWithBooks` cz. 2
+### Test 12 - `shouldPrepareViewModelForAuthorWithBooks` cz. 2
 
 <br>
 
@@ -432,7 +432,7 @@ public class AuthorsWithBooksRepository {
 layout: center
 ---
 
-### Test `shouldPrepareViewModelForAuthorWithBooks` cz. 3
+### Test 12 - `shouldPrepareViewModelForAuthorWithBooks` cz. 3
 
 <br>
 
