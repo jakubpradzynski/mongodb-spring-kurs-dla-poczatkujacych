@@ -21,7 +21,7 @@ na [github.com/jakubpradzynski/mongodb-spring-kurs-dla-poczatkujacych/wiki](http
 <br>
 
 - <Link to="3">Zajęcia 1 (Operowanie bezpośrednio na bazie)</Link>
-- <Link to="39">Zajęcia 2 (Projekt ze [Spring Data MongoDB](https://spring.io/projects/spring-data-mongodb))</Link>
+- <Link to="39">Zajęcia 2 (Projekt ze Spring Data MongoDB)</Link>
 - <Link to="3">Zajęcia 3 (Administrowanie bazą)</Link>
 
 <br><br>

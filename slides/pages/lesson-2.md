@@ -6,6 +6,105 @@ Na tych zajęciach skupimy się na operowaniu na bazie MongoDB z projektu: Java 
 Twoim zadaniem będzie zaimplementować metody w repozytoriach tak, by wszystkie testy przeszły.
 
 ---
+
+# Spring Framework - wprowadzenie
+
+<br>
+
+1. Spring Framework.
+2. Spring Boot.
+3. Spring Data.
+4. Spring Data MongoDB.
+
+---
+
+# Konfiguracja połącznia do MongoDB z projektu
+
+<br>
+
+Zależność: `org.springframework.boot:spring-boot-starter-data-mongodb`
+
+Propery z MongoURI: `spring.data.mongodb.uri`
+
+---
+
+# MongoRepository<T, ID>
+
+<br>
+
+Czym jest `MongoRepository`?
+
+<br>
+
+Przykład:
+
+```java
+@Repository
+interface StudentsRepository implements MongoRepository<Student, ObjectId> {
+    Optional<Student> findByNameAndSurname(String name, String surname);
+}
+```
+
+---
+
+# MongoOperations
+
+<br>
+
+Czym jest `MongoOperations`?
+
+Przykład:
+
+```java
+@Repository
+class StudentsRepository {
+    private final MongoOperations mongoOperations;
+
+    StudentsRepository(MongoOperations mongoOperations) {
+        this.mongoOperations = mongoOperations;
+    }
+
+    public List<Students> findAllStudentsWithName(String name) {
+        return mongoOperations.find(
+                Query.query(Criteria.where("name").is(name)),
+                Student.class
+        );
+    }
+}
+```
+
+---
+
+# Klasa bazodanowa
+
+<br>
+
+Istotne adnotacje: `@Document`, `@Id`, `@Field`, `@Indexed`, `@CompoundIndex`
+
+```java
+@Document(collection = "students")
+record Student(
+        @Id ObjectId id,
+        @Field("firstName") String name,
+        @Field("lastName") String surname
+) {
+}
+```
+
+---
+
+# Projekt
+
+<br>
+
+Pobierz projekt z repo: https://github.com/jakubpradzynski/mongodb-spring-kurs-dla-poczatkujacych
+
+<br>
+
+Wiedza i zadania do wykonania z podpowiedziami na
+wiki (punkt 6 i 7): https://github.com/jakubpradzynski/mongodb-spring-kurs-dla-poczatkujacych/wiki
+
+---
 layout: center
 ---
 
@@ -24,6 +123,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 class BooksRepositoryImpl implements BooksRepository {
     @Override
@@ -47,6 +147,7 @@ class BooksRepositoryImpl implements BooksRepository {
     }
 }
 ```
+
 </details>
 
 <br>
@@ -66,6 +167,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 class BooksRepositoryImpl implements BooksRepository {
     @Override
@@ -78,6 +180,7 @@ class BooksRepositoryImpl implements BooksRepository {
     }
 }
 ```
+
 </details>
 
 ---
@@ -93,6 +196,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 class BooksRepositoryImpl implements BooksRepository {
     @Override
@@ -105,6 +209,7 @@ class BooksRepositoryImpl implements BooksRepository {
     }
 }
 ```
+
 </details>
 
 ---
@@ -120,6 +225,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 class BooksRepositoryImpl implements BooksRepository {
     @Override
@@ -131,6 +237,7 @@ class BooksRepositoryImpl implements BooksRepository {
     }
 }
 ```
+
 </details>
 
 ---
@@ -146,6 +253,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 class BooksRepositoryImpl implements BooksRepository {
     @Override
@@ -154,6 +262,7 @@ class BooksRepositoryImpl implements BooksRepository {
     }
 }
 ```
+
 </details>
 
 ---
@@ -169,6 +278,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 class BooksRepositoryImpl implements BooksRepository {
     @Override
@@ -183,6 +293,7 @@ class BooksRepositoryImpl implements BooksRepository {
     }
 }
 ```
+
 </details>
 
 ---
@@ -198,6 +309,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 class BooksRepositoryImpl implements BooksRepository {
     @Override
@@ -213,6 +325,7 @@ class BooksRepositoryImpl implements BooksRepository {
     }
 }
 ```
+
 </details>
 
 ---
@@ -228,6 +341,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 class BooksRepositoryImpl implements BooksRepository {
     @Override
@@ -239,6 +353,7 @@ class BooksRepositoryImpl implements BooksRepository {
     }
 }
 ```
+
 </details>
 
 ---
@@ -260,6 +375,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 class AuthorsRepositoryImpl implements AuthorsRepository {
     @Override
@@ -283,6 +399,7 @@ class AuthorsRepositoryImpl implements AuthorsRepository {
     }
 }
 ```
+
 </details>
 
 <br>
@@ -302,6 +419,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 class AuthorsRepositoryImpl implements AuthorsRepository {
     @Override
@@ -319,6 +437,7 @@ class AuthorsRepositoryImpl implements AuthorsRepository {
     }
 }
 ```
+
 </details>
 
 ---
@@ -334,6 +453,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 class AuthorsRepositoryImpl implements AuthorsRepository {
     @Override
@@ -355,6 +475,7 @@ class AuthorsRepositoryImpl implements AuthorsRepository {
     }
 }
 ```
+
 </details>
 
 ---
@@ -376,6 +497,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 public class AuthorsWithBooksRepository {
     public List<AuthorsWithBooksViewModel> prepareAuthorsWithBooksViewModel(Instant now) {
@@ -398,6 +520,7 @@ public class AuthorsWithBooksRepository {
     }
 }
 ```
+
 </details>
 
 ---
@@ -413,6 +536,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 public class AuthorsWithBooksRepository {
     public List<AuthorsWithBooksViewModel> prepareAuthorsWithBooksViewModel(Instant now) {
@@ -432,6 +556,7 @@ public class AuthorsWithBooksRepository {
     }
 }
 ```
+
 </details>
 
 ---
@@ -447,6 +572,7 @@ layout: center
 <br>
 
 ```java
+
 @Repository
 public class AuthorsWithBooksRepository {
     public List<AuthorsWithBooksViewModel> prepareAuthorsWithBooksViewModel(Instant now) {
@@ -466,6 +592,7 @@ public class AuthorsWithBooksRepository {
     }
 }
 ```
+
 </details>
 
 ---
