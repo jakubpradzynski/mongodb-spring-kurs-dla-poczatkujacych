@@ -10,16 +10,6 @@ import java.util.Set;
 
 import static pl.jakubpradzynski.mongodb_basics.books.Genre.PROGRAMMING;
 
-enum Genre {
-    INVESTMENT, PROGRAMMING
-}
-
-record Score(
-        Double goodreads,
-        Double lubimyczytac
-) {
-}
-
 @Document(collection = "books")
 public record Book(
         @Id ObjectId id,
