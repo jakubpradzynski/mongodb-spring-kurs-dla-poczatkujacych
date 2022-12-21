@@ -106,7 +106,7 @@ title: Zadanie 1.1.1.
 level: 2
 ---
 
-# Zadanie 1.1.1.
+# Zadanie 1.1.1. Przełącz się na nową bazę danych.
 
 <br>
 
@@ -123,7 +123,7 @@ use lekcja1
 layout: center
 ---
 
-# Zadanie 1.1.2.
+# Zadanie 1.1.2. W nowej kolekcji `inflacja` umieść pierwszy wpis z poniższymi danymi dla (przewidywanej) średniorocznej inflacji z 2022 roku.
 
 <br>
 
@@ -140,7 +140,7 @@ db.inflacja.insertOne({"_id": 2022, "value": 113.7})
 layout: center
 ---
 
-# Zadanie 1.1.3.
+# Zadanie 1.1.3. Następnie korzystając z [danych NBP](https://stat.gov.pl/obszary-tematyczne/ceny-handel/wskazniki-cen/wskazniki-cen-towarow-i-uslug-konsumpcyjnych-pot-inflacja-/roczne-wskazniki-cen-towarow-i-uslug-konsumpcyjnych/) dodaj dane o inflacji w latach 2015-2021.
 
 <br>
 
@@ -165,7 +165,7 @@ db.inflacja.insertMany([
 layout: center
 ---
 
-# Zadanie 1.2.1.
+# Zadanie 1.2.1. Pobierz wszystkie instniejące wpisy o inflacji.
 
 <br>
 
@@ -182,7 +182,7 @@ db.inflacja.find({})
 layout: center
 ---
 
-# Zadanie 1.2.2.
+# Zadanie 1.2.2. Znajdź inflację z roku 2020.
 
 <br>
 
@@ -199,7 +199,7 @@ db.inflacja.find({_id: 2020})
 layout: center
 ---
 
-# Zadanie 1.2.3.
+# Zadanie 1.2.3. Znajdź lata, w których inflacja NIE była zgodna z celem polityki pieniężnej NBP.
 
 <br>
 
@@ -221,7 +221,7 @@ db.inflacja.find({
 layout: center
 ---
 
-# Zadanie 1.3.1.
+# Zadanie 1.3.1. Zmień wartość (prognozowanej) średniorocznej inflacji na rok 2022 na `115.4`.
 
 <br>
 
@@ -241,7 +241,7 @@ db.inflacja.updateOne(
 layout: center
 ---
 
-# Zadanie 1.3.2.
+# Zadanie 1.3.2. Zmień format zapisu inflacji.*
 
 <br>
 
@@ -261,7 +261,7 @@ db.inflacja.updateMany(
 layout: center
 ---
 
-# Zadanie 1.4.1.
+# Zadanie 1.4.1. Usuń wpis dla roku 2018.
 
 <br>
 
@@ -278,7 +278,7 @@ db.inflacja.deleteOne({_id: 2018})
 layout: center
 ---
 
-# Zadanie 1.4.2.
+# Zadanie 1.4.2. Dane o inflacji nie będą nam już potrzebne. Usuń kolekcję.
 
 <br>
 
@@ -318,7 +318,7 @@ db.collection.count({})
 layout: center
 ---
 
-# Zadanie 2.1.
+# Zadanie 2.1. Wyświetl pierwszy dokument z kolekcji `movies`.
 
 <br>
 
@@ -336,7 +336,7 @@ db.movies.find().limit(1)
 layout: center
 ---
 
-# Zadanie 2.2.
+# Zadanie 2.2. Znajdź film o tytule `The Godfather`.
 
 <br>
 
@@ -353,7 +353,7 @@ db.movies.find({title: "The Godfather"})
 layout: center
 ---
 
-# Zadanie 2.3.
+# Zadanie 2.3. Ile jest filmów, które na IMDb mają rating większy lub równy 9.0?
 
 <br>
 
@@ -370,7 +370,7 @@ db.movies.countDocuments({"imdb.rating": {$gte: 9.0}})
 layout: center
 ---
 
-# Zadanie 2.4.
+# Zadanie 2.4. Ile jest polskojęzycznych filmów, które zdobyły więcej niż 15 nagród?
 
 <br>
 
@@ -387,7 +387,7 @@ db.movies.count({"languages": "Polish", "awards.wins": {$gt: 15}})
 layout: center
 ---
 
-# Zadanie 2.5.
+# Zadanie 2.5. Wyświetl listę tytułów, w których obsadzie był Henry Cavill posortowanych po roku premiery.
 
 <br>
 
@@ -404,7 +404,7 @@ db.movies.find({"cast": "Henry Cavill"}, {_id: 0, title: 1}).sort({year: -1})
 layout: center
 ---
 
-# Zadanie 2.6.
+# Zadanie 2.6. Wyszukaj filmy, w których reżyserem był tylko Quentin Tarantino lub Christopher Nolan, posortowanych malejąco po ocenie na IMDb. Wyświetl tylko tytuł, reżysera oraz ocenę z IMDb.
 
 <br>
 
@@ -437,7 +437,7 @@ db.collection.aggregate([ { $match : { field : "value" } } ])
 layout: center
 ---
 
-# Zadanie 3.1.
+# Zadanie 3.1. Znajdź film o tytule `The Godfather`.
 
 <br>
 
@@ -456,7 +456,7 @@ db.movies.aggregate([
 layout: center
 ---
 
-# Zadanie 3.2.
+# Zadanie 3.2. Policz ile znaduje się filmów, a ile seriali w kolekcji `movies`.
 
 <br>
 
@@ -475,7 +475,7 @@ db.movies.aggregate([
 layout: center
 ---
 
-# Zadanie 3.3.
+# Zadanie 3.3. Do filmu o tytule `The Green Mile` dojoinuj komentarze z kolekcji `comments`.
 
 <br>
 
@@ -495,7 +495,7 @@ db.movies.aggregate([
 layout: center
 ---
 
-# Zadanie 3.4.
+# Zadanie 3.4. Skategoryzuj filmy po latach publikacji w buckety, wynik zapisz do nowej kolekcji `movies_buckets`.*
 
 <br>
 
@@ -530,7 +530,7 @@ db.collection.createIndex({field: 1}, {background: true})
 layout: center
 ---
 
-# Zadanie 4.1.
+# Zadanie 4.1. Zobacz, jakie indeksy istnieją w kolekcji `movies`.
 
 <br>
 
@@ -547,7 +547,7 @@ db.movies.getIndices()
 layout: center
 ---
 
-# Zadanie 4.2.
+# Zadanie 4.2. Dodaj indeks na polu `title`.
 
 <br>
 
@@ -564,7 +564,7 @@ db.movies.createIndex({title: 1})
 layout: center
 ---
 
-# Zadanie 4.3.
+# Zadanie 4.3. Dodaj indeks na polach `type` i `year`. Indeks powinien się budować w tle.
 
 <br>
 
@@ -581,7 +581,7 @@ db.movies.createIndex({type: 1, year: 1}, {background: true})
 layout: center
 ---
 
-# Zadanie 4.4.
+# Zadanie 4.4. Usuń indeks na polu `title`.
 
 <br>
 
