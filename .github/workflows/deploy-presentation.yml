@@ -12,8 +12,10 @@ jobs:
         run: npm install
       - name: Install slidev
         run:  npm i -g @slidev/cli
+      - name: Enter slides dir
+        run: cd slides
       - name: Build
-        run: slidev build --base mongodb-spring-kurs-dla-poczatkujacych/slides/
+        run: slidev build
       - name: Deploy pages
         uses: crazy-max/ghaction-github-pages@v2
         with:
