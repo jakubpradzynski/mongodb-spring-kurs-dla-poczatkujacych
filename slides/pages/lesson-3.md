@@ -428,7 +428,7 @@ layout: center
   <summary>Rozwiązanie</summary>
 
 <div align="center">
-    <img src="images/chart-config.png" width="200" alt="Chart config">
+    <img src="/images/chart-config.png" width="200" alt="Chart config">
 </div>
 
 </details>
