@@ -22,7 +22,7 @@ na [github.com/jakubpradzynski/mongodb-spring-kurs-dla-poczatkujacych/wiki](http
 
 - <Link to="3">Zajęcia 1 (Operowanie bezpośrednio na bazie)</Link>
 - <Link to="39">Zajęcia 2 (Projekt ze Spring Data MongoDB)</Link>
-- <Link to="3">Zajęcia 3 (Administrowanie bazą)</Link>
+- <Link to="64">Zajęcia 3 (Administrowanie bazą MongoDB)</Link>
 
 <br><br>
 
@@ -36,4 +36,8 @@ src: ./pages/lesson-1.md
 
 ---
 src: ./pages/lesson-2.md
+---
+
+---
+src: ./pages/lesson-3.md
 ---

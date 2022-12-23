@@ -596,5 +596,8 @@ public class AuthorsWithBooksRepository {
 </details>
 
 ---
+layout: fact
+hideInToc: true
+---
 
 # Koniec zajęć 2
