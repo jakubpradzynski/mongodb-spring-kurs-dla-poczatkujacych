@@ -5,7 +5,7 @@ background: https://source.unsplash.com/collection/94734566/1920x1080
 
 # Tworzenie nowoczesnych aplikacji backendowych w praktyce
 
-Zajęcia Allegro na Wydziale Matematyki i Informatyki UMK 2022/2023.
+Zajęcia Allegro na Wydziale Matematyki i Informatyki UMK 2022/2023 & 2023/2024.
 
 ---
 
