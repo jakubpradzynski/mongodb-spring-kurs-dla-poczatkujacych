@@ -13,7 +13,7 @@ import org.testcontainers.utility.DockerImageName;
 public class IntegrationTestsBase {
 
     //    @Container
-    public static MongoDBContainer container = new MongoDBContainer(DockerImageName.parse("mongo:5.0.13"));
+    public static MongoDBContainer container = new MongoDBContainer(DockerImageName.parse("mongo:6.0.12"));
 
     @BeforeAll
     static void beforeAll() {

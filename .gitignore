@@ -1,3 +1,5 @@
 .idea
 slides/dist
 slides/node_modules
+mongodb_basics/.gradle
+mongodb_basics/build
